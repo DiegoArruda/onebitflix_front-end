@@ -1,3 +1,4 @@
+import Footer from "@/src/components/common/footer";
 import CardsSection from "@/src/components/homeNoAuth/cardSection";
 import HeaderNoAuth from "@/src/components/homeNoAuth/HeaderNoAuth";
 import PresentationSection from "@/src/components/homeNoAuth/presentationSection";
@@ -32,6 +33,7 @@ const HomeNotAuth = ({ course }: IndexPageProps) => {
         </div>
         <CardsSection />
         <SlideSection newestCourses={course} />
+        <Footer />
       </main>
     </>
   );
