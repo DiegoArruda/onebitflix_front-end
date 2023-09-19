@@ -25,7 +25,6 @@
 .btnCta {
   font-weight: bold;
   color: white;
-  text-decoration: none;
 
   display: flex;
   align-items: center;
@@ -42,6 +41,10 @@
     color: $lightGray;
     background-color: transparent;
   }
+}
+
+.link {
+  text-decoration: none;
 }
 
 .arrowImg {
