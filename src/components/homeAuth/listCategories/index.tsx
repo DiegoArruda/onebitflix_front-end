@@ -4,6 +4,7 @@ import categoriesService, {
 } from "../../../services/categoriesService";
 import ListCategoriesSlide from "../listCategoriesSlide";
 import styles from "../../../../styles/slideCategory.module.scss";
+import PageSpinner from "../../common/spinner";
 
 const ListCategories = () => {
   const { data, error } = useSWR(
@@ -12,7 +13,7 @@ const ListCategories = () => {
   );
 
   if (error) return error;
-  if (!data) return <p>Loading...</p>;
+  if (!data) return <PageSpinner />;
   return (
     <>
       {data.data.categories?.map((category: CategoryType) => (
