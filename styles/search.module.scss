@@ -1,0 +1,22 @@
+.header {
+  background-color: black;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.searchResult {
+}
+.noSearchtext {
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.mainContent {
+  flex: 1 0 auto;
+}
+.footer {
+  background-color: black;
+}
