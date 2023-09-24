@@ -30,10 +30,10 @@ const Search = () => {
         <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.header}>
+        <div className={styles.headerFooterBg}>
           <HeaderAuth />
         </div>
-        <section className={styles.mainContent}>
+        <section className={styles.searchContainer}>
           {searchResult.length >= 1 ? (
             <Container className="d-flex flex-wrap justify-content-center gap-5 py-4">
               {searchResult?.map((course) => (
@@ -41,10 +41,14 @@ const Search = () => {
               ))}
             </Container>
           ) : (
-            <p className={styles.noSearchText}>Nenhum resultado encontrado!</p>
+            <div className={styles.searchContainer}>
+              <p className={styles.noSearchText}>
+                Nenhum resultado encontrado!
+              </p>
+            </div>
           )}
         </section>
-        <div className={styles.footer}>
+        <div className={styles.headerFooterBg}>
           <Footer />
         </div>
       </main>
