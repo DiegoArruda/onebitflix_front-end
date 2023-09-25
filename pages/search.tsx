@@ -7,9 +7,11 @@ import { useRouter } from "next/router";
 import { Container } from "reactstrap";
 import Footer from "@/src/components/common/footer";
 import SearchCard from "@/src/components/searchcard";
+import PageSpinner from "@/src/components/common/spinner";
 
 const Search = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
   const searchName: any = router.query.name;
   const [searchResult, setSearchResult] = useState<CourseType[]>([]);
 
@@ -22,6 +24,18 @@ const Search = () => {
   useEffect(() => {
     searchCourses();
   }, [searchName]);
+
+  useEffect(() => {
+    if (!sessionStorage.getItem("onebitflix-token")) {
+      router.push("/login");
+    } else {
+      setLoading(false);
+    }
+  }, []);
+
+  if (loading) {
+    return <PageSpinner />;
+  }
 
   return (
     <>

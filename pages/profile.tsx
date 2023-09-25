@@ -1,14 +1,30 @@
 import Footer from "@/src/components/common/footer";
 import HeaderAuth from "@/src/components/common/headerAuth";
+import PageSpinner from "@/src/components/common/spinner";
 import PasswordForm from "@/src/components/profile/password";
 import UserForm from "@/src/components/profile/user";
 import Head from "next/head";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { Col, Row, Container, Button } from "reactstrap";
 import styles from "../styles/profile.module.scss";
 
 const UserInfo = function () {
   const [form, setForm] = useState("userForm");
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!sessionStorage.getItem("onebitflix-token")) {
+      router.push("/login");
+    } else {
+      setLoading(false);
+    }
+  }, []);
+
+  if (loading) {
+    return <PageSpinner />;
+  }
   return (
     <>
       <Head>
