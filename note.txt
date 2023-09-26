@@ -1,2 +1,4 @@
 npm install react-modal@3.14.4 react-player@2.10.0 reactstrap@9.0.2 --legacy-peer-deps
 npm install -D @types/aos3.0.4 @types/react-modals@3.13.1 --legacy-peer-deps
+npm install @splidejs/react-splide@latest axios@latest bootstrap@latest next@latest react@latest react-dom@latest react-player@latest react-modal@latest reactstrap@latest sass@latest swr@latest
+npm i --save-dev @types/node@latest @types/react@latest @types/react-dom@latest eslint@latest eslint-config-next@latest typescript@latest --force
